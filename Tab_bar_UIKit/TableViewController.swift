@@ -19,6 +19,15 @@ class TableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+       
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+         if let taskArray = UserDefaults.standard.array(forKey: "taskArray") as? [String] {
+            array = taskArray
+            tableView.reloadData()
+        }
     }
 
     // MARK: - Table view data source
