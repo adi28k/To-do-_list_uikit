@@ -31,7 +31,7 @@ class ViewController: UIViewController {
             UserDefaults.standard.setValue([task], forKey: "taskArray")
         }
         
-        textLabel.text= ""
+        textLabel.text = ""
     }
     
     
