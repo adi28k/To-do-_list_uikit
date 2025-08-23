@@ -25,6 +25,7 @@ class ViewController: UIViewController {
         
         do {
             if let data = UserDefaults.standard.data(forKey: "taskItemArray"){
+                
                 var array = try JSONDecoder().decode([TaskItem].self,from: data)
                 
                 array.append(newTask)
@@ -33,7 +34,7 @@ class ViewController: UIViewController {
                 
                 UserDefaults.standard.set(encodedata, forKey: "taskItemArray")
             } else {
-                let encodedata = try  JSONDecoder().encode([newTask])
+                let encodedata = try  JSONEncoder().encode([newTask])
                 
                 UserDefaults.standard.set(encodedata, forKey: "taskItemArray")
             }
