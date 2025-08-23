@@ -24,9 +24,9 @@ class TableViewController: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-         if let taskArray = UserDefaults.standard.array(forKey: "taskArray") as? [String] {
-            array = taskArray
-            tableView.reloadData()
+   //      if let taskArray = UserDefaults.standard.array(forKey: "taskArray") as? [String] {
+  //          array = taskArray
+   //         tableView.reloadData()
         }
     }
 
