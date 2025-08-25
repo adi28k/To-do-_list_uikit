@@ -72,11 +72,13 @@ class TableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "Cell")
+        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "Cell")
 
         // Configure the cell...
         
-        cell.textLabel?.text = arrayTask[indexPath.row].name
+        cell.textLabel?.text = arrayTask[indexPath.row].name + "" +  arrayTask[indexPath.row].surname
+        
+        cell.detailTextLabel?.text = arrayTask[indexPath.row].phone
         
         if arrayTask[indexPath.row].isCompleted {
             cell.accessoryType = .checkmark
