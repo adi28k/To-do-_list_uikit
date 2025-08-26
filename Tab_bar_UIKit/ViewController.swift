@@ -8,7 +8,12 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet weak var textLabel: UITextField!
+    @IBOutlet weak var nameTextField: UITextField!
+    
+    @IBOutlet var surnameTextField: [UITextField]!
+    
+    
+    @IBOutlet var phoneTextField: [UITextField]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,9 +23,11 @@ class ViewController: UIViewController {
     
     @IBAction func addButton(_ sender: Any) {
         
-        let task = textLabel.text!
-        
-        var newTask = TaskItem(name: task, isCompleted: false)
+        guard let name = nameTextField.text, !name.isEmpty,
+                 let surname = surnameTextField.text, !surname.isEmpty,
+                 let phone = phoneTextField.text, !phone.isEmpty else {
+               return 
+           }
         
         
         do {

@@ -99,7 +99,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Add task" image="plus.viewfinder" catalog="system" id="eWw-4M-u0t"/>
                     <connections>
-                        <outlet property="textLabel" destination="paN-CZ-ycW" id="Tf7-My-qj4"/>
+                        <outlet property="nameField" destination="vjT-rj-nmf" id="6vH-5c-Lsd"/>
+                        <outletCollection property="surnameField" destination="L5X-Tu-YwT" collectionClass="NSMutableArray" id="xbq-sL-Qv1"/>
+                        <outletCollection property="phoneNumberField" destination="paN-CZ-ycW" collectionClass="NSMutableArray" id="cB2-hL-aig"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -192,10 +194,10 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wk0-TX-neo">
-                                <rect key="frame" x="138" y="409" width="117" height="35"/>
+                                <rect key="frame" x="139" y="409" width="116" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Add contact"/>
+                                <buttonConfiguration key="configuration" style="plain" title="edit contact"/>
                                 <connections>
                                     <action selector="addButton:" destination="ohs-vS-GWo" eventType="touchDown" id="aQg-57-GIU"/>
                                 </connections>
