@@ -99,9 +99,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Add task" image="plus.viewfinder" catalog="system" id="eWw-4M-u0t"/>
                     <connections>
-                        <outlet property="nameField" destination="vjT-rj-nmf" id="6vH-5c-Lsd"/>
-                        <outletCollection property="surnameField" destination="L5X-Tu-YwT" collectionClass="NSMutableArray" id="xbq-sL-Qv1"/>
-                        <outletCollection property="phoneNumberField" destination="paN-CZ-ycW" collectionClass="NSMutableArray" id="cB2-hL-aig"/>
+                        <outlet property="nameTextField" destination="vjT-rj-nmf" id="1sQ-cC-Oki"/>
+                        <outlet property="phoneTextField" destination="paN-CZ-ycW" id="p8f-FC-tjr"/>
+                        <outlet property="surnameTextField" destination="L5X-Tu-YwT" id="uzx-kl-KWO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

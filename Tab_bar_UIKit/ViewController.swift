@@ -10,10 +10,10 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var nameTextField: UITextField!
     
-    @IBOutlet var surnameTextField: [UITextField]!
+    @IBOutlet weak var surnameTextField: UITextField!
     
     
-    @IBOutlet var phoneTextField: [UITextField]!
+    @IBOutlet weak var phoneTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,28 +26,26 @@ class ViewController: UIViewController {
         guard let name = nameTextField.text, !name.isEmpty,
                  let surname = surnameTextField.text, !surname.isEmpty,
                  let phone = phoneTextField.text, !phone.isEmpty else {
-               return 
+               return
            }
         
         
-        do {
-            if let data = UserDefaults.standard.data(forKey: "taskItemArray"){
-                
-                var array = try JSONDecoder().decode([TaskItem].self,from: data)
-                
-                array.append(newTask)
-                
-                let encodedata = try JSONEncoder().encode(array)
-                
-                UserDefaults.standard.set(encodedata, forKey: "taskItemArray")
-            } else {
-                let encodedata = try  JSONEncoder().encode([newTask])
-                
-                UserDefaults.standard.set(encodedata, forKey: "taskItemArray")
-            }
-        } catch {
-            print ("unable to encode \(error)")
-        }
+        let newTask = TaskItem(name: name, surname: surname, phone: phone, isCompleted: false)
+           
+           do {
+               if let data = UserDefaults.standard.data(forKey: "taskItemArray") {
+                   var array = try JSONDecoder().decode([TaskItem].self, from: data)
+                   array.append(newTask)
+                   
+                   let encodedData = try JSONEncoder().encode(array)
+                   UserDefaults.standard.set(encodedData, forKey: "taskItemArray")
+               } else {
+                   let encodedData = try JSONEncoder().encode([newTask])
+                   UserDefaults.standard.set(encodedData, forKey: "taskItemArray")
+               }
+           } catch {
+               print("unable to encode \(error)")
+           }
         
         /*
         
@@ -64,7 +62,9 @@ class ViewController: UIViewController {
         
         */
         
-        textLabel.text = ""
+        nameTextField.text = ""
+            surnameTextField.text = ""
+            phoneTextField.text = ""
     }
     
     
