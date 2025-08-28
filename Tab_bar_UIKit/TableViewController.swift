@@ -76,7 +76,8 @@ class TableViewController: UITableViewController {
 
         // Configure the cell...
         
-        cell.textLabel?.text = arrayTask[indexPath.row].name + "" +  arrayTask[indexPath.row].surname
+        cell.textLabel?.text = arrayTask[indexPath.row].name + " " + arrayTask[indexPath.row].surname!
+
         
         cell.detailTextLabel?.text = arrayTask[indexPath.row].phone
         

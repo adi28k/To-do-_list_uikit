@@ -10,7 +10,7 @@ import Foundation
 struct TaskItem: Codable {
     
     var name: String
-    var surname: String
+    var surname: String?
     var phone: String
     var isCompleted: Bool
 }
